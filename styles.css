@@ -22,3 +22,13 @@
 #login {
   display: none;
 }
+
+#hero-body {
+  padding: none;
+}
+
+.delete {
+  display: block;
+  position: absolute;
+  right: 1.5em;
+}

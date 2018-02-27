@@ -622,11 +622,10 @@
   <div id="signup" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
-      <header class="modal-card-head">
-        <p class="modal-card-title"></p>
-        <button id="signupClose" class="delete" aria-label="close"></button>
-      </header>
       <section class="modal-card-body hero is-fullheight is-dark is-bold">
+        <button id="signupClose" class="delete" aria-label="close">
+        </button>
+
         <div class="hero-body">
           <div class="container">
             <div class="columns is-vcentered">
@@ -663,7 +662,7 @@
                   </p>
                 </div>
                 <p class="has-text-centered">
-                  <a href="login.html">Login</a>
+                  <a id="loginFromRegister">Login</a>
                   |
                   <a href="#">Need help?</a>
                 </p>
@@ -685,11 +684,10 @@
   <div id="login" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
-      <header class="modal-card-head is-dark">
-        <p class="modal-card-title"></p>
-        <button id="loginClose" class="delete" aria-label="close"></button>
-      </header>
       <section class="modal-card-body hero is-fullheight is-dark is-bold">
+        <button id="loginClose" class="delete" aria-label="close">
+        </button>
+
         <div class="hero-body">
           <div class="container">
             <div class="columns is-vcentered">
@@ -713,7 +711,7 @@
                   </p>
                 </div>
                 <p class="has-text-centered">
-                  <a href="register.html">Register an Account</a>
+                  <a id="registerFromLogin">Register an Account</a>
                   |
                   <a href="#">Forgot password</a>
                   |

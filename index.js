@@ -26,12 +26,21 @@ snackCard.forEach(snack => {
   snack.addEventListener('touchstart', displayDetail);
 })
 
+const loginFromRegister = document.querySelector('#loginFromRegister');
+loginFromRegister.addEventListener('click', displayLogin);
+loginFromRegister.addEventListener('touchstart', displayLogin);
+
+const registerFromLogin = document.querySelector('#registerFromLogin');
+registerFromLogin.addEventListener('click', displaySignup);
+registerFromLogin.addEventListener('touchstart', displaySignup);
+
 function loadHomepage() {
   document.querySelector('#allSnacks').style.display = "block";
   document.querySelector('#snackDetail').style.display = "none";
 }
 
 function displaySignup() {
+  hideLogin();
   document.querySelector('#signup').style.display = "block";
 }
 
@@ -40,6 +49,7 @@ function hideSignup() {
 }
 
 function displayLogin() {
+  hideSignup();
   document.querySelector('#login').style.display = "block";
 }
 
