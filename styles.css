@@ -11,6 +11,10 @@
   float: right;
 }
 
+#snackDetail {
+  display: none;
+}
+
 #signup {
   display: none;
 }
