@@ -14,6 +14,10 @@ const loginClose = document.querySelector('#loginClose');
 loginClose.addEventListener('click', hideLogin);
 loginClose.addEventListener('touchstart', hideLogin);
 
+function navHome() {
+  document.querySelector('#navHome').style.display = "block";
+  // document.querySelector('#snackDetail').style.display = "none";
+}
 
 function displaySignup() {
   document.querySelector('#signup').style.display = "block";
