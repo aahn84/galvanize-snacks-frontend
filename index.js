@@ -18,14 +18,6 @@ const loginClose = document.querySelector('#loginClose');
 loginClose.addEventListener('click', hideLogin);
 loginClose.addEventListener('touchstart', hideLogin);
 
-const snackCard = document.querySelectorAll('.is-4');
-snackCard.forEach(snack => {
-  snack.addEventListener('click', displayDetail);
-})
-snackCard.forEach(snack => {
-  snack.addEventListener('touchstart', displayDetail);
-})
-
 const loginFromRegister = document.querySelector('#loginFromRegister');
 loginFromRegister.addEventListener('click', displayLogin);
 loginFromRegister.addEventListener('touchstart', displayLogin);
@@ -34,6 +26,24 @@ const registerFromLogin = document.querySelector('#registerFromLogin');
 registerFromLogin.addEventListener('click', displaySignup);
 registerFromLogin.addEventListener('touchstart', displaySignup);
 
+const cancelLogin = document.querySelector('#cancelLogin');
+cancelLogin.addEventListener('click', hideLogin);
+cancelLogin.addEventListener('touchstart', hideLogin);
+
+const cancelSignup = document.querySelector('#cancelSignup');
+cancelSignup.addEventListener('click', hideSignup);
+cancelSignup.addEventListener('touchstart', hideSignup);
+
+const snackCard = document.querySelectorAll('.is-4');
+snackCard.forEach(snack => {
+  snack.addEventListener('click', displayDetail);
+})
+snackCard.forEach(snack => {
+  snack.addEventListener('touchstart', displayDetail);
+})
+
+
+// FUNCTIONS
 function loadHomepage() {
   document.querySelector('#allSnacks').style.display = "block";
   document.querySelector('#snackDetail').style.display = "none";
