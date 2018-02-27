@@ -1,0 +1,11 @@
+#navBarTitle {
+  font-size: 1.5em;
+}
+
+#signup {
+  display: none;
+}
+
+#login {
+  display: none;
+}
