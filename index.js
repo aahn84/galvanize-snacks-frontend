@@ -1,3 +1,7 @@
+const navHome = document.querySelector('#navHome');
+navHome.addEventListener('click', loadHomepage);
+navHome.addEventListener('touchstart', loadHomepage);
+
 const signupButton = document.querySelector('#signupButton');
 signupButton.addEventListener('click', displaySignup);
 signupButton.addEventListener('touchstart', displaySignup);
@@ -14,9 +18,17 @@ const loginClose = document.querySelector('#loginClose');
 loginClose.addEventListener('click', hideLogin);
 loginClose.addEventListener('touchstart', hideLogin);
 
-function navHome() {
-  document.querySelector('#navHome').style.display = "block";
-  // document.querySelector('#snackDetail').style.display = "none";
+const snackCard = document.querySelectorAll('.is-4');
+snackCard.forEach(snack => {
+  snack.addEventListener('click', displayDetail);
+})
+snackCard.forEach(snack => {
+  snack.addEventListener('touchstart', displayDetail);
+})
+
+function loadHomepage() {
+  document.querySelector('#allSnacks').style.display = "block";
+  document.querySelector('#snackDetail').style.display = "none";
 }
 
 function displaySignup() {
@@ -33,4 +45,10 @@ function displayLogin() {
 
 function hideLogin() {
   document.querySelector('#login').style.display = "none";
+}
+
+function displayDetail(event) {
+  console.log('CLICKED', event.target)
+  document.querySelector('#allSnacks').style.display = "none";
+  document.querySelector('#snackDetail').style.display = "block";
 }
