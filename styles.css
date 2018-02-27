@@ -1,5 +1,17 @@
 #navBarTitle {
-  font-size: 1.5em;
+  font-size: 2.5em;
+}
+
+#bodyContainer {
+  padding: 1 rem;
+}
+
+.nav {
+  padding: 1.5rem;
+}
+
+#allSnacksTitle {
+  padding: 1rem;
 }
 
 .card-header-title {
