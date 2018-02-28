@@ -2,17 +2,25 @@ const navHome = document.querySelector('#navHome');
 navHome.addEventListener('click', loadHomepage);
 navHome.addEventListener('touchstart', loadHomepage);
 
-const signupButton = document.querySelector('#signupButton');
-signupButton.addEventListener('click', displaySignup);
-signupButton.addEventListener('touchstart', displaySignup);
+const signupNavButton = document.querySelector('#signupNavButton');
+signupNavButton.addEventListener('click', displaySignup);
+signupNavButton.addEventListener('touchstart', displaySignup);
+
+const registerButton = document.querySelector('#registerButton');
+registerButton.addEventListener('click', registerUser);
+registerButton.addEventListener('touchstart', registerUser);
 
 const signupClose = document.querySelector('#signupClose');
 signupClose.addEventListener('click', hideSignup);
 signupClose.addEventListener('touchstart', hideSignup);
 
+const loginNavButton = document.querySelector('#loginNavButton');
+loginNavButton.addEventListener('click', displayLogin);
+loginNavButton.addEventListener('touchstart', displayLogin);
+
 const loginButton = document.querySelector('#loginButton');
-loginButton.addEventListener('click', displayLogin);
-loginButton.addEventListener('touchstart', displayLogin);
+loginButton.addEventListener('click', loginUser);
+loginButton.addEventListener('touchstart', loginUser);
 
 const loginClose = document.querySelector('#loginClose');
 loginClose.addEventListener('click', hideLogin);
@@ -58,6 +66,10 @@ function hideSignup() {
   document.querySelector('#signup').style.display = "none";
 }
 
+function registerUser() {
+  //need to make this
+}
+
 function displayLogin() {
   hideSignup();
   document.querySelector('#login').style.display = "block";
@@ -65,6 +77,10 @@ function displayLogin() {
 
 function hideLogin() {
   document.querySelector('#login').style.display = "none";
+}
+
+function loginUser() {
+  //need to make this
 }
 
 function displayDetail(event) {
