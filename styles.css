@@ -18,8 +18,33 @@
   font-size: 1.5em;
 }
 
-.reviews {
+.panel-block-item {
+  align-content: space-between;
+  width: 100%;
+}
+
+.card-content {
+  display: flex;
+  justify-content: center;
+}
+
+.avgRating {
   display: block;
+  float: left;
+}
+
+#avgStars {
+  /* display: block; */
+  /* float: right; */
+  /* position: absolute; */
+}
+
+.checked {
+  color: orange;
+}
+
+.reviews {
+  /* display: block; */
   float: right;
 }
 
@@ -43,4 +68,13 @@
   display: block;
   position: absolute;
   right: 1.5em;
+}
+
+.product-header {
+  padding: 1rem;
+}
+
+.addReviewP {
+  display: flex;
+  justify-content: center;
 }

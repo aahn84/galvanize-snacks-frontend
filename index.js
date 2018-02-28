@@ -1,3 +1,4 @@
+// EVENT LISTENERS
 const navHome = document.querySelector('#navHome');
 navHome.addEventListener('click', loadHomepage);
 navHome.addEventListener('touchstart', loadHomepage);
@@ -50,6 +51,10 @@ snackCard.forEach(snack => {
   snack.addEventListener('touchstart', displayDetail);
 })
 
+const addReviewButton = document.querySelector('#addReviewButton');
+addReviewButton.addEventListener('click', addNewReview);
+addReviewButton.addEventListener('touchstart', addNewReview);
+
 
 // FUNCTIONS
 function loadHomepage() {
@@ -84,7 +89,11 @@ function loginUser() {
 }
 
 function displayDetail(event) {
-  console.log('CLICKED', event.target)
+  // console.log('CLICKED', event.target)
   document.querySelector('#allSnacks').style.display = "none";
   document.querySelector('#snackDetail').style.display = "block";
+}
+
+function addNewReview() {
+  //need to make this
 }
