@@ -7,6 +7,9 @@ const path = 'http://localhost:3000';
 /**ON LOAD**/
 loadHomepage();
 
+let allSnacks;
+let snackName;
+
 
 /**EVENT LISTENERS**/
 // HOME nav
@@ -86,9 +89,21 @@ function loadHomepage() {
 
   axios.get(`${path}/api/snacks`)
     .then(res => {
-      let snacks = res.data
+      allSnacks = res.data;
+      console.log('all snacks', allSnacks);
+      console.log('names', allSnacks.name);
 
-      console.log(snacks);
+
+      allSnacks.forEach(snack => {
+        snackName = snack.name
+        console.log(snackName);
+      })
+
+      const cardTitle = document.querySelector('.card-header-title')
+      cardTitle.textContent = 'HELLO'
+    })
+    .catch(err => {
+      console.log('Error!', err);
     })
 }
 
