@@ -1,48 +1,70 @@
-// EVENT LISTENERS
+// DEV path
+const path = 'http://localhost:3000';
+// PROD path
+// const path = 'https://mossy-mood.herokuapp.com';
+
+
+/**ON LOAD**/
+loadHomepage();
+
+
+/**EVENT LISTENERS**/
+// HOME nav
 const navHome = document.querySelector('#navHome');
 navHome.addEventListener('click', loadHomepage);
 navHome.addEventListener('touchstart', loadHomepage);
 
+// SIGNUP nav
 const signupNavButton = document.querySelector('#signupNavButton');
 signupNavButton.addEventListener('click', displaySignup);
 signupNavButton.addEventListener('touchstart', displaySignup);
 
-const registerButton = document.querySelector('#registerButton');
-registerButton.addEventListener('click', registerUser);
-registerButton.addEventListener('touchstart', registerUser);
-
-const signupClose = document.querySelector('#signupClose');
-signupClose.addEventListener('click', hideSignup);
-signupClose.addEventListener('touchstart', hideSignup);
-
+// LOGIN nav
 const loginNavButton = document.querySelector('#loginNavButton');
 loginNavButton.addEventListener('click', displayLogin);
 loginNavButton.addEventListener('touchstart', displayLogin);
 
+// MODAL REGISTER button
+const registerButton = document.querySelector('#registerButton');
+registerButton.addEventListener('click', registerUser);
+registerButton.addEventListener('touchstart', registerUser);
+
+// MODAL LOGIN button
 const loginButton = document.querySelector('#loginButton');
 loginButton.addEventListener('click', loginUser);
 loginButton.addEventListener('touchstart', loginUser);
 
-const loginClose = document.querySelector('#loginClose');
-loginClose.addEventListener('click', hideLogin);
-loginClose.addEventListener('touchstart', hideLogin);
-
-const loginFromRegister = document.querySelector('#loginFromRegister');
-loginFromRegister.addEventListener('click', displayLogin);
-loginFromRegister.addEventListener('touchstart', displayLogin);
-
-const registerFromLogin = document.querySelector('#registerFromLogin');
-registerFromLogin.addEventListener('click', displaySignup);
-registerFromLogin.addEventListener('touchstart', displaySignup);
-
-const cancelLogin = document.querySelector('#cancelLogin');
-cancelLogin.addEventListener('click', hideLogin);
-cancelLogin.addEventListener('touchstart', hideLogin);
-
+// MODAL CANCEL signup
 const cancelSignup = document.querySelector('#cancelSignup');
 cancelSignup.addEventListener('click', hideSignup);
 cancelSignup.addEventListener('touchstart', hideSignup);
 
+// MODAL CANCEL login
+const cancelLogin = document.querySelector('#cancelLogin');
+cancelLogin.addEventListener('click', hideLogin);
+cancelLogin.addEventListener('touchstart', hideLogin);
+
+// MODAL CLOSE signup
+const signupClose = document.querySelector('#signupClose');
+signupClose.addEventListener('click', hideSignup);
+signupClose.addEventListener('touchstart', hideSignup);
+
+// MODAL CLOSE login
+const loginClose = document.querySelector('#loginClose');
+loginClose.addEventListener('click', hideLogin);
+loginClose.addEventListener('touchstart', hideLogin);
+
+// MODAL toggle LOGIN from register
+const loginFromRegister = document.querySelector('#loginFromRegister');
+loginFromRegister.addEventListener('click', displayLogin);
+loginFromRegister.addEventListener('touchstart', displayLogin);
+
+// MODAL toggle REGISTER from login
+const registerFromLogin = document.querySelector('#registerFromLogin');
+registerFromLogin.addEventListener('click', displaySignup);
+registerFromLogin.addEventListener('touchstart', displaySignup);
+
+// SNACKS cards
 const snackCard = document.querySelectorAll('.is-4');
 snackCard.forEach(snack => {
   snack.addEventListener('click', displayDetail);
@@ -51,15 +73,23 @@ snackCard.forEach(snack => {
   snack.addEventListener('touchstart', displayDetail);
 })
 
+// ADD REVIEWS button
 const addReviewButton = document.querySelector('#addReviewButton');
 addReviewButton.addEventListener('click', addNewReview);
 addReviewButton.addEventListener('touchstart', addNewReview);
 
 
-// FUNCTIONS
+/**FUNCTIONS**/
 function loadHomepage() {
   document.querySelector('#allSnacks').style.display = "block";
   document.querySelector('#snackDetail').style.display = "none";
+
+  axios.get(`${path}/api/snacks`)
+    .then(res => {
+      let snacks = res.data
+
+      console.log(snacks);
+    })
 }
 
 function displaySignup() {
