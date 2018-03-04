@@ -116,8 +116,24 @@ function hideSignup() {
   document.querySelector('#signup').style.display = "none";
 }
 
-function registerUser() {
+function registerUser(e) {
   //need to make this
+  //okay! xD
+  //does not perform any validation... yet.
+  let registerBody = {
+    first_name: $('#regFirstName').val(),
+    last_name: $('#regLastName').val(),
+    email: $('#regEmail').val(),
+    password: $('#regPassword').val()
+  }
+  axios.post(`${path}/api/users/register`, registerBody)
+    .then(result => {
+      console.log(result)
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  //still need to handle success OR fail from above axios call
 }
 
 function displayLogin() {
