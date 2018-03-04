@@ -94,10 +94,10 @@ function loadHomepage() {
       // console.log('names', allSnacks.name);
 
       // let columnthing = $('#allSnacksColumn')
-      let columnthing = document.querySelector('#allSnacksColumn')
-      // console.log(columnthing.innerHTML)
+      let allSnacksColumn = document.querySelector('#allSnacksColumn')
+      // console.log(allSnacksColumn.innerHTML)
       allSnacks.snacks.forEach(snack => {
-        columnthing.innerHTML += snackCardGen(snack)
+        allSnacksColumn.innerHTML += snackCardGen(snack)
         // snackName = snack.name
         // console.log(snackName)
       })
