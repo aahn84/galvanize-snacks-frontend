@@ -91,7 +91,7 @@ function loadHomepage() {
     .then(res => {
       allSnacks = res.data;
       console.log('all snacks', allSnacks);
-      console.log('names', allSnacks.name);
+      // console.log('names', allSnacks.name);
 
 
       allSnacks.forEach(snack => {
