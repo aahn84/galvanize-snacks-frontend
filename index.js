@@ -93,14 +93,16 @@ function loadHomepage() {
       console.log('all snacks', allSnacks);
       // console.log('names', allSnacks.name);
 
-
-      allSnacks.forEach(snack => {
-        snackName = snack.name
-        console.log(snackName);
+      let columnthing = $('#allSnacksColumn')
+      columnthing.innerHTML = ''
+      allSnacks.snacks.forEach(snack => {
+        snackCardGen(snack)
+        // snackName = snack.name
+        // console.log(snackName)
       })
 
-      const cardTitle = document.querySelector('.card-header-title')
-      cardTitle.textContent = 'HELLO'
+      // const cardTitle = document.querySelector('.card-header-title')
+      // cardTitle.textContent = 'HELLO'
     })
     .catch(err => {
       console.log('Error!', err);

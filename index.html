@@ -5,6 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scooby Snacks</title>
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" id="bulma" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css" />
+  <link rel="stylesheet" type="css" href="../css/grid-gallery.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/styles.css">
   <!-- Axios/CORS -->
   <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- JQuery -->
@@ -13,12 +19,8 @@
   <!-- <script defer type="text/javascript" src="../js/bulma.js"></script> -->
   <!-- Custom JavaScript -->
   <script defer type="text/javascript" src="/index.js"></script>
-  <!-- Bulma CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  <link rel="stylesheet" id="bulma" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css" />
-  <link rel="stylesheet" type="css" href="../css/grid-gallery.css">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="/styles.css">
+  <!-- Templates -->
+  <script defer type="text/javascript" src="/templates/snackTileCard.js"></script>
 </head>
 
 <body>
@@ -66,7 +68,7 @@
 
       </div>
 
-      <div class="columns">
+      <div id="allSnacksColumn" class="columns">
 
         <div class="column is-4">
           <div class="card">
