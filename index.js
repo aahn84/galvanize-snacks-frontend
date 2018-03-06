@@ -68,13 +68,16 @@ registerFromLogin.addEventListener('click', displaySignup);
 registerFromLogin.addEventListener('touchstart', displaySignup);
 
 // SNACKS cards
-const snackCard = document.querySelectorAll('.is-4');
-snackCard.forEach(snack => {
-  snack.addEventListener('click', displayDetail);
-})
-snackCard.forEach(snack => {
-  snack.addEventListener('touchstart', displayDetail);
-})
+function clickedSnack() {
+  const snackCard = document.querySelectorAll('.is-4');
+  snackCard.forEach(snack => {
+    snack.addEventListener('click', displayDetail);
+  })
+  snackCard.forEach(snack => {
+    snack.addEventListener('touchstart', displayDetail);
+  })
+}
+
 
 // ADD REVIEWS button
 const addReviewButton = document.querySelector('#addReviewButton');
@@ -90,7 +93,7 @@ function loadHomepage() {
   axios.get(`${path}/api/snacks`)
     .then(res => {
       allSnacks = res.data;
-      console.log('all snacks', allSnacks);
+      // console.log('all snacks', allSnacks);
       // console.log('names', allSnacks.name);
 
       // let columnthing = $('#allSnacksColumn')
@@ -153,7 +156,7 @@ function loginUser() {
 }
 
 function displayDetail(event) {
-  // console.log('CLICKED', event.target)
+  console.log('CLICKED', event.target)
   document.querySelector('#allSnacks').style.display = "none";
   document.querySelector('#snackDetail').style.display = "block";
 }

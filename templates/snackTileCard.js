@@ -1,5 +1,8 @@
 function snackCardGen(snack) {
-  return `<div id="${snack.id}" class="col-sm-12 col-md-6 col-lg-4 column is-4">
+  if (snack.name.length > 25) {
+    snack.name = `${snack.name.slice(0,22)}...`
+  }
+  return `<div id="${snack.id}" onclick="clickedSnack()" class="col-sm-12 col-md-6 col-lg-4 column is-4">
             <div class="card">
               <header class="card-header">
                 <p class="card-header-title">
