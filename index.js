@@ -69,8 +69,10 @@ registerFromLogin.addEventListener('touchstart', displaySignup);
 
 // SNACKS cards
 function clickedSnack(event) {
-<<<<<<< HEAD
-  console.log('clicked snack', event.target.parentNode);
+  // console.log(event.target)
+  let id = idFinder(event.target)
+  console.log(id)
+
   const snackCard = document.querySelectorAll('.is-4');
   snackCard.forEach(snack => {
     snack.addEventListener('click', displayDetail);
@@ -78,19 +80,18 @@ function clickedSnack(event) {
   snackCard.forEach(snack => {
     snack.addEventListener('touchstart', displayDetail);
   })
-=======
-  // console.log(event.target)
-  let id = idFinder(event.target)
-  console.log(id)
-  
-  // const snackCard = document.querySelectorAll('.is-4');
-  // snackCard.forEach(snack => {
-  //   snack.addEventListener('click', displayDetail);
-  // })
-  // snackCard.forEach(snack => {
-  //   snack.addEventListener('touchstart', displayDetail);
-  // })
->>>>>>> 34a293a232acbd6fd30359cc253085a4fc8ed58c
+
+  axios.get(`${path}/api/snacks/${id}`)
+    .then(snack => {
+      console.log(snack.data);
+      let details = document.querySelector('#snackDetail')
+      details.innerHTML = generateDetails(snack.data)
+
+      return details;
+    })
+    .catch(err => {
+      console.log('Error!', err);
+    })
 }
 
 function idFinder(node) {
@@ -104,9 +105,9 @@ function idFinder(node) {
 }
 
 // ADD REVIEWS button
-const addReviewButton = document.querySelector('#addReviewButton');
-addReviewButton.addEventListener('click', addNewReview);
-addReviewButton.addEventListener('touchstart', addNewReview);
+// const addReviewButton = document.querySelector('#addReviewButton');
+// addReviewButton.addEventListener('click', addNewReview);
+// addReviewButton.addEventListener('touchstart', addNewReview);
 
 
 /**FUNCTIONS**/
