@@ -69,6 +69,7 @@ registerFromLogin.addEventListener('touchstart', displaySignup);
 
 // SNACKS cards
 function clickedSnack(event) {
+<<<<<<< HEAD
   console.log('clicked snack', event.target.parentNode);
   const snackCard = document.querySelectorAll('.is-4');
   snackCard.forEach(snack => {
@@ -77,8 +78,30 @@ function clickedSnack(event) {
   snackCard.forEach(snack => {
     snack.addEventListener('touchstart', displayDetail);
   })
+=======
+  // console.log(event.target)
+  let id = idFinder(event.target)
+  console.log(id)
+  
+  // const snackCard = document.querySelectorAll('.is-4');
+  // snackCard.forEach(snack => {
+  //   snack.addEventListener('click', displayDetail);
+  // })
+  // snackCard.forEach(snack => {
+  //   snack.addEventListener('touchstart', displayDetail);
+  // })
+>>>>>>> 34a293a232acbd6fd30359cc253085a4fc8ed58c
 }
 
+function idFinder(node) {
+  // console.log(node)
+  if (!node) return null
+  if (!node.id) {
+    return idFinder(node.parentNode)
+  }
+  // console.log('oh dear');
+  return node.id
+}
 
 // ADD REVIEWS button
 const addReviewButton = document.querySelector('#addReviewButton');
