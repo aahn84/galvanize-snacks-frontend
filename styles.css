@@ -10,6 +10,30 @@
   padding: 1.5rem;
 }
 
+.is-4 {
+  /* width: 360px */
+}
+
+@media screen and (min-width: 450px) {
+    .is-4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* background-color: lavender; */
+    }
+}
+
+.card {
+  display: block;
+  height: 380px;
+  width: 360px;
+}
+
+#allSnacksColumn {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #allSnacksTitle {
   padding: 1rem;
 }
@@ -49,7 +73,7 @@
 }
 
 #snackDetail {
-  display: none;
+  /* display: none; */
 }
 
 #signup {

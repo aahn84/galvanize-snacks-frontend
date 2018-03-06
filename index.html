@@ -5,14 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Scooby Snacks</title>
-  <!-- Axios/CORS -->
-  <script  src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- Bulma CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" id="bulma" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.3.2/css/bulma.min.css" />
   <link rel="stylesheet" type="css" href="../css/grid-gallery.css">
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/styles.css">
+  <!-- Axios/CORS -->
+  <script defer src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- JQuery -->
+  <script defer type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+  <!-- Bulma JavaScript -->
+  <!-- <script defer type="text/javascript" src="../js/bulma.js"></script> -->
+  <!-- Custom JavaScript -->
+  <script defer type="text/javascript" src="/index.js"></script>
+  <!-- Templates -->
+  <script defer type="text/javascript" src="/templates/snackTileCard.js"></script>
 </head>
 
 <body>
@@ -60,230 +68,8 @@
 
       </div>
 
-      <div class="columns">
+      <div id="allSnacksColumn" class="row">
 
-        <div class="column is-4">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                snackname here!
-              </p>
-              <span class="card-header-icon timestamp">
-                <!-- 12k Reviews -->
-              </span>
-            </header>
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://placehold.it/1280x960" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="panel-block-item">
-                <div class="avgRating">
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star"></span>
-                  <span id="avgStars" class="fa fa-star"></span>
-                  3.0/5.0
-                  <!-- <div class="icon"> -->
-                    <!-- <i class="fa fa-heart"></i> -->
-                    <!-- <span id="avgStars" class="fa fa-star checked"></span>
-                    <span id="avgStars" class="fa fa-star checked"></span>
-                    <span id="avgStars" class="fa fa-star checked"></span>
-                    <span id="avgStars" class="fa fa-star"></span>
-                    <span id="avgStars" class="fa fa-star"></span> -->
-                  <!-- </div> -->
-                  <!-- Avg Rating -->
-                </div>
-                <div class="reviews">
-                  <!-- <span class="icon">
-                    <i class="fa fa-comment"></i>
-                  </span> -->
-                  12k Reviews
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                snackname here!
-              </p>
-              <span class="card-header-icon timestamp">
-                2m
-              </span>
-            </header>
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://placehold.it/1280x960" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="panel-block-item">
-                <div class="avgRating">
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star"></span>
-                  <span id="avgStars" class="fa fa-star"></span>
-                  <!-- 3.0/5.0 -->
-                </div>
-                <div class="reviews">
-                  <span class="icon">
-                    <i class="fa fa-comment"></i>
-                  </span>
-                  12k Reviews
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                snackname here!
-              </p>
-              <span class="card-header-icon timestamp">
-                2m
-              </span>
-            </header>
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://placehold.it/1280x960" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="panel-block-item">
-                <div class="avgRating">
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star checked"></span>
-                  <span id="avgStars" class="fa fa-star"></span>
-                  <span id="avgStars" class="fa fa-star"></span>
-                  <!-- 3.0/5.0 -->
-                </div>
-                <div class="reviews">
-                  <!-- <span class="icon">
-                    <i class="fa fa-comment"></i>
-                  </span> -->
-                  12k Reviews
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns">
-
-        <div class="column is-4">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                snackname here!
-              </p>
-              <span class="card-header-icon timestamp">
-                2m
-              </span>
-            </header>
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://placehold.it/1280x960" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="panel-block-item">
-                <span class="avgRating">
-                  <span class="icon">
-                    <i class="fa fa-heart"></i>
-                  </span>
-                  Avg Rating
-                </span>
-                <span class="reviews">
-                  <span class="icon">
-                    <i class="fa fa-comment"></i>
-                  </span>
-                  12k Reviews
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                snackname here!
-              </p>
-              <span class="card-header-icon timestamp">
-                2m
-              </span>
-            </header>
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://placehold.it/1280x960" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="panel-block-item">
-                <span class="avgRating">
-                  <span class="icon">
-                    <i class="fa fa-heart"></i>
-                  </span>
-                  Avg Rating
-                </span>
-                <span class="reviews">
-                  <span class="icon">
-                    <i class="fa fa-comment"></i>
-                  </span>
-                  12k Reviews
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="column is-4">
-          <div class="card">
-            <header class="card-header">
-              <p class="card-header-title">
-                snackname here!
-              </p>
-              <span class="card-header-icon timestamp">
-                2m
-              </span>
-            </header>
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="https://placehold.it/1280x960" alt="Image">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="panel-block-item">
-                <span class="avgRating">
-                  <span class="icon">
-                    <i class="fa fa-heart"></i>
-                  </span>
-                  Avg Rating
-                </span>
-                <span class="reviews">
-                  <span class="icon">
-                    <i class="fa fa-comment"></i>
-                  </span>
-                  12k Reviews
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <!-- <div class="columns">
 
@@ -642,22 +428,22 @@
                   Register an Account
                 </h1>
                 <div class="box">
-                  <label class="label">Name</label>
+                  <label class="label">First Name</label>
                   <p class="control">
-                    <input class="input" type="text" placeholder="John Smith">
+                    <input id="regFirstName" class="input" type="text" placeholder="John">
                   </p>
-                  <label class="label">Username</label>
+                  <label class="label">Last Name</label>
                   <p class="control">
-                    <input class="input" type="text" placeholder="jsmith">
+                    <input id="regLastName" class="input" type="text" placeholder="Smith">
                   </p>
                   <label class="label">Email</label>
                   <p class="control">
-                    <input class="input" type="text" placeholder="jsmith@example.org">
+                    <input id="regEmail" class="input" type="text" placeholder="jsmith@example.org">
                   </p>
                   <hr>
                   <label class="label">Password</label>
                   <p class="control">
-                    <input class="input" type="password" placeholder="●●●●●●●">
+                    <input id="regPassword" class="input" type="password" placeholder="●●●●●●●">
                   </p>
                   <label class="label">Confirm Password</label>
                   <p class="control">
@@ -757,10 +543,5 @@
     </div>
 
   </footer>
-  <!-- Bulma JavaScript -->
-  <!-- <script type="text/javascript" src="../js/bulma.js"></script> -->
-
-  <!-- Custom JavaScript -->
-  <script type="text/javascript" src="/index.js"></script>
 </body>
 </html>

@@ -68,13 +68,16 @@ registerFromLogin.addEventListener('click', displaySignup);
 registerFromLogin.addEventListener('touchstart', displaySignup);
 
 // SNACKS cards
-const snackCard = document.querySelectorAll('.is-4');
-snackCard.forEach(snack => {
-  snack.addEventListener('click', displayDetail);
-})
-snackCard.forEach(snack => {
-  snack.addEventListener('touchstart', displayDetail);
-})
+function clickedSnack() {
+  const snackCard = document.querySelectorAll('.is-4');
+  snackCard.forEach(snack => {
+    snack.addEventListener('click', displayDetail);
+  })
+  snackCard.forEach(snack => {
+    snack.addEventListener('touchstart', displayDetail);
+  })
+}
+
 
 // ADD REVIEWS button
 const addReviewButton = document.querySelector('#addReviewButton');
@@ -90,17 +93,20 @@ function loadHomepage() {
   axios.get(`${path}/api/snacks`)
     .then(res => {
       allSnacks = res.data;
-      console.log('all snacks', allSnacks);
-      console.log('names', allSnacks.name);
+      // console.log('all snacks', allSnacks);
+      // console.log('names', allSnacks.name);
 
-
-      allSnacks.forEach(snack => {
-        snackName = snack.name
-        console.log(snackName);
+      // let columnthing = $('#allSnacksColumn')
+      let allSnacksColumn = document.querySelector('#allSnacksColumn')
+      // console.log(allSnacksColumn.innerHTML)
+      allSnacks.snacks.forEach(snack => {
+        allSnacksColumn.innerHTML += snackCardGen(snack)
+        // snackName = snack.name
+        // console.log(snackName)
       })
 
-      const cardTitle = document.querySelector('.card-header-title')
-      cardTitle.textContent = 'HELLO'
+      // const cardTitle = document.querySelector('.card-header-title')
+      // cardTitle.textContent = 'HELLO'
     })
     .catch(err => {
       console.log('Error!', err);
@@ -116,8 +122,24 @@ function hideSignup() {
   document.querySelector('#signup').style.display = "none";
 }
 
-function registerUser() {
+function registerUser(e) {
   //need to make this
+  //okay! xD
+  //does not perform any validation... yet.
+  let registerBody = {
+    first_name: $('#regFirstName').val(),
+    last_name: $('#regLastName').val(),
+    email: $('#regEmail').val(),
+    password: $('#regPassword').val()
+  }
+  axios.post(`${path}/api/users/register`, registerBody)
+    .then(result => {
+      console.log(result)
+    })
+    .catch(err => {
+      console.error(err)
+    })
+  //still need to handle success OR fail from above axios call
 }
 
 function displayLogin() {
@@ -134,7 +156,7 @@ function loginUser() {
 }
 
 function displayDetail(event) {
-  // console.log('CLICKED', event.target)
+  console.log('CLICKED', event.target)
   document.querySelector('#allSnacks').style.display = "none";
   document.querySelector('#snackDetail').style.display = "block";
 }
