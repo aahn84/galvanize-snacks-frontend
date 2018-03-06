@@ -25,6 +25,8 @@
 
 .card {
   display: block;
+  /* height: 28em; */
+  /* width: 80vw; */
   height: 380px;
   width: 360px;
 }

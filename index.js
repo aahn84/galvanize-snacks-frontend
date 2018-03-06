@@ -68,7 +68,8 @@ registerFromLogin.addEventListener('click', displaySignup);
 registerFromLogin.addEventListener('touchstart', displaySignup);
 
 // SNACKS cards
-function clickedSnack() {
+function clickedSnack(event) {
+  console.log('clicked snack', event.target.parentNode);
   const snackCard = document.querySelectorAll('.is-4');
   snackCard.forEach(snack => {
     snack.addEventListener('click', displayDetail);
