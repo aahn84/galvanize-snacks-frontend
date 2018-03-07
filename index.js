@@ -67,47 +67,10 @@ const registerFromLogin = document.querySelector('#registerFromLogin');
 registerFromLogin.addEventListener('click', displaySignup);
 registerFromLogin.addEventListener('touchstart', displaySignup);
 
-// SNACKS cards
-function clickedSnack(event) {
-  // console.log(event.target)
-  let id = idFinder(event.target)
-  console.log(id)
-
-  const snackCard = document.querySelectorAll('.is-4');
-  snackCard.forEach(snack => {
-    snack.addEventListener('click', displayDetail);
-  })
-  snackCard.forEach(snack => {
-    snack.addEventListener('touchstart', displayDetail);
-  })
-
-  axios.get(`${path}/api/snacks/${id}`)
-    .then(snack => {
-      console.log(snack.data);
-      let details = document.querySelector('#snackDetail')
-      details.innerHTML = generateDetails(snack.data)
-
-      return details;
-    })
-    .catch(err => {
-      console.log('Error!', err);
-    })
-}
-
-function idFinder(node) {
-  // console.log(node)
-  if (!node) return null
-  if (!node.id) {
-    return idFinder(node.parentNode)
-  }
-  // console.log('oh dear');
-  return node.id
-}
-
-// ADD REVIEWS button
-// const addReviewButton = document.querySelector('#addReviewButton');
-// addReviewButton.addEventListener('click', addNewReview);
-// addReviewButton.addEventListener('touchstart', addNewReview);
+// MODAL close add review
+const closeReviewModal = document.querySelector('#addReviewClose');
+closeReviewModal.addEventListener('click', hideReviewModal);
+closeReviewModal.addEventListener('touchstart', hideReviewModal);
 
 
 /**FUNCTIONS**/
@@ -186,6 +149,52 @@ function displayDetail(event) {
   document.querySelector('#snackDetail').style.display = "block";
 }
 
+// generate SNACKS cards
+function clickedSnack(event) {
+  let id = idFinder(event.target)
+  // console.log(id)
+
+  const snackCard = document.querySelectorAll('.is-4');
+  snackCard.forEach(snack => {
+    snack.addEventListener('click', displayDetail);
+  })
+  snackCard.forEach(snack => {
+    snack.addEventListener('touchstart', displayDetail);
+  })
+
+  axios.get(`${path}/api/snacks/${id}`)
+    .then(snack => {
+      // console.log(snack.data);
+      let details = document.querySelector('#snackDetail')
+      details.innerHTML = generateDetails(snack.data)
+      return details;
+    })
+    .catch(err => {
+      console.log('Error!', err);
+    })
+}
+
+// find clicked ID
+function idFinder(node) {
+  // console.log(node)
+  if (!node) return null
+  if (!node.id) {
+    return idFinder(node.parentNode)
+  }
+  // console.log('oh dear');
+  return node.id
+}
+
+function displayReviewModal() {
+  document.querySelector('#addReviewModal').style.display = "block";
+}
+
+function hideReviewModal() {
+  document.querySelector('#addReviewModal').style.display = "none";
+}
+
 function addNewReview() {
-  //need to make this
+  displayReviewModal();
+
+  //need more stuff here!!!!!
 }

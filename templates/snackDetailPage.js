@@ -37,7 +37,7 @@ function generateDetails(snack) {
               <br>
               <br>
               <div class="addReviewP">
-                <a id="addReviewButton" class="button is-primary">Add Review</a>
+                <a id="addReviewButton" onclick="addNewReview()" class="button is-primary">Add Review</a>
               </div>
               <br>
               <table class="table">
