@@ -67,10 +67,13 @@ const registerFromLogin = document.querySelector('#registerFromLogin');
 registerFromLogin.addEventListener('click', displaySignup);
 registerFromLogin.addEventListener('touchstart', displaySignup);
 
-// MODAL close add review
+// MODAL close-cancel add review
 const closeReviewModal = document.querySelector('#addReviewClose');
 closeReviewModal.addEventListener('click', hideReviewModal);
 closeReviewModal.addEventListener('touchstart', hideReviewModal);
+const cancelReviewModal = document.querySelector('#cancelReview');
+cancelReviewModal.addEventListener('click', hideReviewModal);
+cancelReviewModal.addEventListener('touchstart', hideReviewModal);
 
 
 /**FUNCTIONS**/
