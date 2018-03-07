@@ -37,7 +37,7 @@ function generateDetails(snack) {
               <br>
               <br>
               <div class="addReviewP">
-                <a id="addReviewButton" onclick="addNewReview()" class="button is-primary">Add Review</a>
+                <a id="addReviewButton" onclick="displayReviewModal()" class="button is-primary">Add Review</a>
               </div>
               <br>
               <table class="table">
@@ -46,7 +46,7 @@ function generateDetails(snack) {
                     <td class="has-text-right">
                       <strong>Item ID</strong>
                     </td>
-                    <td>${snack.id}</td>
+                    <td id="snackId">${snack.id}</td>
                   </tr>
                   <tr>
                     <td class="has-text-right">

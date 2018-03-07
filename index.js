@@ -67,13 +67,18 @@ const registerFromLogin = document.querySelector('#registerFromLogin');
 registerFromLogin.addEventListener('click', displaySignup);
 registerFromLogin.addEventListener('touchstart', displaySignup);
 
-// MODAL close-cancel add review
+// MODAL close-cancel review
 const closeReviewModal = document.querySelector('#addReviewClose');
 closeReviewModal.addEventListener('click', hideReviewModal);
 closeReviewModal.addEventListener('touchstart', hideReviewModal);
 const cancelReviewModal = document.querySelector('#cancelReview');
 cancelReviewModal.addEventListener('click', hideReviewModal);
 cancelReviewModal.addEventListener('touchstart', hideReviewModal);
+
+// MODAL SUBMIT review
+const submitReviewButton = document.querySelector('#submitReview');
+submitReviewButton.addEventListener('click', submitReview);
+submitReviewButton.addEventListener('touchstart', submitReview);
 
 
 /**FUNCTIONS**/
@@ -196,8 +201,13 @@ function hideReviewModal() {
   document.querySelector('#addReviewModal').style.display = "none";
 }
 
-function addNewReview() {
-  displayReviewModal();
+function submitReview() {
+  let id = document.querySelector('#snackId').value;
+  console.log(id);
+
+  let reviewText = document.querySelector('textarea').value;
+  // console.log(reviewText);
+  axios.post(`${path}/api/reviews/${id}`)
 
   //need more stuff here!!!!!
 }
